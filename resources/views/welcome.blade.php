@@ -1,132 +1,1844 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
+    <title>Record</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
 
-        <title>Laravel</title>
+<body class="sidebar-mini sidebar-collapse theme-dark  sidebar-expanded-on-hover has-preloader" style="display: none;">
+<!-- Pre loader
+  To disable preloader remove 'has-preloader' from body
+ -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<div id="loader" class="loader">
+    <div class="loader-container">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+<!-- @Pre loader-->
+<div id="rekord-app">
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
+
+<aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
+    <div class="sidebar">
+        <ul class="sidebar-menu">
+            <li><a class="ajaxifyPage active" href="index.html">
+                <i class="icon icon-home-1 s-24"></i> <span>Home</span>
+            </a>
+            </li>
+            <li><a class="ajaxifyPage" href="categories.html">
+                <i class="icon icon-layers-1 s-24"></i> <span>Categories</span>
+            </a>
+            <li>
+            <li><a class="ajaxifyPage" href="albums.html">
+                <i class="icon icon-windows s-24"></i> <span>Albums</span>
+            </a>
+            <li>
+            <li><a class="ajaxifyPage" href="videos.html">
+                <i class="icon icon-video-player-2 s-24"></i> <span>Videos</span>
+            </a>
+            </li>
+            <li><a class="ajaxifyPage" href="events.html">
+                <i class="icon icon-calendar-6 s-24"></i> <span>Events</span>
+            </a>
+            </li>
+
+            <li><a class="ajaxifyPage" href="gallery.html">
+                <i class="icon icon-photo-camera-1 s-24"></i> <span>Gallery</span>
+            </a>
+            </li>
+            <li><a class="ajaxifyPage" href="blog.html">
+                <i class="icon icon-newspaper s-24"></i> <span>Blog</span>
+            </a>
+            </li>
+
+            <li><a class="ajaxifyPage" href="artists.html">
+                <i class="icon icon-users s-24"></i> <span>Artists</span>
+            </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="#">
+                    <i class="icon icon-menu-4 s-24"></i> <span>Pages</span>
+                    <i class=" icon-angle-left  pull-right"></i>
+                </a>
+                <ul class="sub-menu">
+
+                    <li><a href="page-blank.html"><i class="icon icon-document"></i>Simple Blank</a>
+                    </li>
+                    <li><a href="page-blank-tabs.html"><i class="icon icon-document"></i>Tabs Blank</a>
+                    </li>
+                    <li>
+                        <a href="login.html"><i class="icon icon-document"></i>Login Page</a>
+                    </li>
+                    <li>
+                        <a href="404.html"><i class="icon icon-document"></i>404 Page</a>
+                    </li>
+                    <li>
+                        <a href="profile.html"><i class="icon icon-document"></i>Profile</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="#">
+                    <i class="icon icon-add-3  s-24"></i> <span>Elements</span>
+                    <i class=" icon-angle-left pull-right"></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="element-widgets.html">
+                            <i class="icon icon-app text-primary s-14"></i> <span>Widgets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="element-typography.html">
+                            <i class="icon icon-text-width text-primary s-14"></i> <span>Typography</span>
+                        </a>
+                    </li>
+                    <li><a href="element-slider.html"><i class="icon icon-sliders text-primary s-14"></i>
+                        <span>Slider</span></a></li>
+                    <li><a href="element-tabs.html"><i class="icon icon-folder text-primary s-14"></i>
+                        <span>Tabs</span></a></li>
+                    <li><a href="element-progress-bars.html"><i class="icon icon-battery-5 text-primary s-14"></i>
+                        <span>Progress Bars</span></a></li>
+
+                    <li><a href="element-preloaders.html"><i class="icon icon-attachment text-primary s-14"></i>
+                        <span>Preloaders</span></a></li>
+                    <li>
+                        <a href="element-letters.html">
+                            <i class="icon icon-user-1 text-primary s-14"></i>
+                            <span>Avatar Placeholders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="element-icons.html">
+                            <i class="icon icon-archive-3 text-primary s-14"></i> <span>Icons</span>
+                        </a>
+                    </li>
+                    <li class="mb-5"><a href="element-colors.html">
+                        <i class="icon icon-view-1 text-primary s-14"></i> <span>Colors</span>
+                    </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+</aside>
+<!--Sidebar End-->
+
+<!-- Right Sidebar -->
+<aside class="control-sidebar fixed ">
+    <div class="slimScroll">
+        <div class="sidebar-header">
+            <h4>PlayList</h4>
+            <p>Awesome Collection for you</p>
+            <a href="#" data-toggle="control-sidebar" class="paper-nav-toggle  active"><i></i></a>
+        </div>
+        <div class="p-3">
+            <ul id="playlist" class="playlist list-group">
+                <li class="list-group-item my-1">
+                    <a class="no-ajaxy media-url" href="assets/media/track1.mp3" data-wave="assets/media/track1.json">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <i class="icon-play s-28"></i>
+                            <figure class="avatar-md float-left mr-3 mt-1">
+                                <img class="r-5" src="assets/img/demo/a1.jpg" alt="">
+                            </figure>
+                            <div>
+                                <h6>alexander Pierce</h6>Atif Aslam
                             </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
+                            <span class="badge badge-primary badge-pill"> 5:03</span>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
+                    </a>
+                </li>
+                <li class="list-group-item my-1">
+                    <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <i class="icon-play s-28"></i>
+                            <figure class="avatar-md float-left mr-3 mt-1">
+                                <img class="r-5" src="assets/img/demo/a2.jpg" alt="">
+                            </figure>
+                            <div>
+                                <h6>alexander Pierce</h6>Atif Aslam
                             </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
+                            <span class="badge badge-primary badge-pill"> 5:03</span>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
+                    </a>
+                </li>
+                <li class="list-group-item my-1">
+                    <a class="no-ajaxy media-url" href="assets/media/track3.mp3" data-wave="assets/media/track3.json">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <i class="icon-play s-28"></i>
+                            <figure class="avatar-md float-left mr-3 mt-1">
+                                <img class="r-5" src="assets/img/demo/a4.jpg" alt="">
+                            </figure>
+                            <div>
+                                <h6>alexander Pierce</h6>Atif Aslam
                             </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
+                            <span class="badge badge-primary badge-pill"> 5:03</span>
                         </div>
+                    </a>
+                </li>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
+                <li class="list-group-item my-1">
+                    <a class="no-ajaxy media-url" href="assets/media/track1.mp3"  data-wave="assets/media/track1.json">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <i class="icon-play s-28"></i>
+                            <figure class="avatar-md float-left mr-3 mt-1">
+                                <img class="r-5" src="assets/img/demo/a5.jpg" alt="">
+                            </figure>
+                            <div>
+                                <h6>alexander Pierce</h6>Atif Aslam
                             </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
+                            <span class="badge badge-primary badge-pill"> 5:03</span>
                         </div>
+                    </a>
+                </li>
+
+                <li class="list-group-item my-1">
+                    <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <i class="icon-play s-28"></i>
+                            <figure class="avatar-md float-left mr-3 mt-1">
+                                <img class="r-5" src="assets/img/demo/a6.jpg" alt="">
+                            </figure>
+                            <div>
+                                <h6>alexander Pierce</h6>Atif Aslam
+                            </div>
+                            <span class="badge badge-primary badge-pill"> 5:03</span>
+                        </div>
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</aside>
+<!-- /.right-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+<div class="control-sidebar-bg shadow  fixed"></div>
+
+<svg class="d-none">
+    <defs>
+        <symbol id="icon-cross" viewBox="0 0 24 24">
+            <title>cross</title>
+            <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+        </symbol>
+    </defs>
+</svg>
+<div class="searchOverlay page">
+    <button
+            id="btn-searchOverlay-close"
+            class="btn btn--searchOverlay-close"
+            aria-label="Close searchOverlay form"
+    >
+        <svg class="icon icon--cross">
+            <use xlink:href="#icon-cross"></use>
+        </svg>
+    </button>
+    <div class="searchOverlay__inner  searchOverlay__inner--up">
+        <form class="searchOverlay__form" action="index.html">
+            <input
+                    class="searchOverlay__input"
+                    name="searchOverlay"
+                    type="text"
+                    placeholder="Search"
+                    autocomplete="off"
+                    spellcheck="false"
+            />
+            <span class="searchOverlay__info">Hit enter to searchOverlay or ESC to close</span>
+        </form>
+    </div>
+    <div class="searchOverlay__inner searchOverlay__inner--down">
+        <div class="searchOverlay__related">
+            <div class="searchOverlay__suggestion">
+                <div class="card mb-3">
+                    <div class="card-header transparent b-b">
+                        <strong>New Artists</strong>
                     </div>
+                    <ul class="playlist list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-10">
+                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
+                                        <img src="assets/img/demo/u1.jpg" alt="">
+                                    </figure>
+                                    <h6>Zoe Foe</h6>
+                                    <small>5 Albums - 50 Songs</small>
+                                </div>
+                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-10">
+                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
+                                        <img src="assets/img/demo/u2.jpg" alt="">
+                                    </figure>
+                                    <h6>Zoe Foe</h6>
+                                    <small>5 Albums - 50 Songs</small>
+                                </div>
+                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-10">
+                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
+                                        <img src="assets/img/demo/u3.jpg" alt="">
+                                    </figure>
+                                    <h6>Zoe Foe</h6>
+                                    <small>5 Albums - 50 Songs</small>
+                                </div>
+                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-10">
+                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
+                                        <img src="assets/img/demo/u6.jpg" alt="">
+                                    </figure>
+                                    <h6>Zoe Foe</h6>
+                                    <small>5 Albums - 50 Songs</small>
+                                </div>
+                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
+            </div>
+            <div class="searchOverlay__suggestion">
+                <div class="card mb-3">
+                    <div class="card-header transparent b-b">
+                        <strong>Events</strong>
                     </div>
+                    <ul class="playlist list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center ">
+                                <div class="col-8 ">
+                                    <a href="video-single.html">
+                                        <h6>Battal of Bands</h6>
+                                    </a>
+                                    <small class="mt-1"><i class="icon-placeholder-3 mr-1 "></i> London Music Hall
+                                    </small>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="text-lg-center  bg-primary r-10 p-2 text-white primary-bg">
+                                        <div class="s-18">24</div>
+                                        <small>July, 2019</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center ">
+                                <div class="col-8 ">
+                                    <a href="video-single.html">
+                                        <h6>Battal of Bands</h6>
+                                    </a>
+                                    <small class="mt-1"><i class="icon-placeholder-3 mr-1 "></i> London Music Hall
+                                    </small>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="text-lg-center  bg-primary r-10 p-2 text-white primary-bg">
+                                        <div class="s-18">08</div>
+                                        <small>July, 2019</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center ">
+                                <div class="col-8 ">
+                                    <a href="video-single.html">
+                                        <h6>Battal of Bands</h6>
+                                    </a>
+                                    <small class="mt-1"><i class="icon-placeholder-3 mr-1 "></i> London Music Hall
+                                    </small>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="text-lg-center  bg-primary r-10 p-2 text-white primary-bg">
+                                        <div class="s-18">12</div>
+                                        <small>July, 2019</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+
+
+<!--navbar-->
+<nav class="navbar-wrapper navbar-bottom-fixed shadow">
+    <div class="navbar navbar-expand player-header justify-content-between  bd-navbar">
+        <div class="d-flex align-items-center">
+            <a href="#" data-toggle="push-menu" class="paper-nav-toggle pp-nav-toggle  paper-nav-toggle-sidenav ml-2 mr-2">
+                <i></i>
+            </a>
+            <a class="navbar-brand d-none d-lg-block" href="index.html">
+                <div class="d-flex align-items-center s-14 l-s-2">
+                    <span>RECORD</span>
+                </div>
+            </a>
+        </div>
+        <!--Player-->
+        <div id="mediaPlayer" class="player-bar col-lg-8 col-md-5" data-auto="true">
+            <div class="row align-items-center grid">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <button id="previousTrack" class="btn btn-link d-none d-sm-block">
+                            <i class="icon-back s-18"></i>
+                        </button>
+                        <button class=" btn btn-link" id="playPause">
+                            <span id="play"><i class="icon-play s-36"></i></span>
+                            <span id="pause" style="display: none"><i class="icon-pause s-36 text-primary"></i></span>
+                        </button>
+                        <button id="nextTrack" class="btn btn-link d-none d-sm-block">
+                            <i class="icon-next s-18"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-8 d-none d-lg-block">
+                    <div id="waveform"></div>
+                </div>
+                <div class="col d-none d-lg-block">
+                    <small class="track-time mr-2 text-primary align-middle"></small>
+                    <a data-toggle="control-sidebar">
+                        <i class="icon icon-menu-3 s-24 align-middle"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!--@Player-->
+        <!--Top Menu Start -->
+<div class="navbar-custom-menu">
+    <ul class="nav navbar-nav">
+
+        <!-- Right Sidebar Toggle Button -->
+        <li class="searchOverlay-wrap">
+            <a href="#" id="btn-searchOverlay" class="nav-link mr-3 btn--searchOverlay no-ajaxy">
+                <i class="icon icon-search s-24"></i>
+            </a>
+
+        </li>
+        <!-- User Account-->
+        <li class="dropup custom-dropdown user user-menu ">
+            <a href="#" class="nav-link" data-toggle="dropdown">
+                <figure class="avatar">
+                    <img src="assets/img/demo/u7.png" alt="">
+                </figure>
+                <i class="icon-more_vert "></i>
+            </a>
+            <div class="dropdown-menu p-4 dropdown-menu-right">
+                <div class="row box justify-content-between my-4">
+                    <div class="col text-center">
+                        <a class="ajaxifyPage" href="saved.html">
+                            <i class="icon icon-save s-24"></i> <span>Saved</span>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a class="ajaxifyPage" href="saved.html">
+                            <i class="icon icon-heart s-24"></i> <span>Favourites</span>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a class="ajaxifyPage" href="profile.html">
+                            <i class="icon-user-4  s-24"></i>
+                            <div class="pt-1">Profile</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+    </div>
+
+</nav>
+<!--Page Content-->
+<main id="pageContent" class="page has-sidebar">
+<div class="container-fluid relative animatedParent animateOnce no-p">
+    <div class="animated fadeInUpShort">
+        <!--Banner Slider-->
+        <section>
+            <div class="text-white">
+                <div class="lightSlider"
+                     data-item="1"
+                     data-controls="true"
+                     data-slide-margin="0"
+                     data-gallery="false"
+                     data-pause="8000"
+                     data-pauseonhover="true"
+                     data-auto="false"
+                     data-pager="false"
+                     data-loop="true">
+                    <div class="xv-slide" data-bg-possition="top"
+                         style="background-image:url('assets/img/demo/b1.jpg');">
+                        <div class="wrapper has-bottom-gradient">
+                            <div class="p-md-5 p-3">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6 fadeInRight animated">
+                                        <div class="xv-slider-content clearfix color-white">
+                                            <h1 class="s-64 mt-5 font-weight-lighter">Mitaric</h1>
+                                            <p class="s-24 font-weight-lighter">Sed eget orci eleifend enim mattis
+                                                suscipit. <br>Suspendisse
+                                                potenti non ipsum.</p>
+                                            <div class="pt-3">
+                                                <a href="#" class="btn btn-primary btn-lg">Buy Now At iTunes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-gradient"></div>
+                    </div>
+                </div>
+            </div>
+            <!--slider Wrap-->
+        </section>
+        <!--@Banner Slider-->
+        <div class="wrapper p-md-5 p-3  ">
+            <!--New Releases-->
+            <section class="section">
+                <div class="d-flex relative align-items-center justify-content-between">
+                    <div class="mb-4">
+                        <h4>New Releases For You</h4>
+                        <p>Enjoy some new awesome music</p>
+                    </div>
+                    <a href="albums.html">View Albums<i class="icon-angle-right ml-3"></i></a>
+                </div>
+                <div class="lightSlider has-items-overlay playlist"
+                     data-item="6"
+                     data-item-lg="3"
+                     data-item-md="3"
+                     data-item-sm="2"
+                     data-auto="false"
+                     data-pager="false"
+                     data-controls="true"
+                     data-loop="false">
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a8.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a1.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a2.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a4.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a5.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a6.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a7.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                </div>
+            </section>
+            <!--@New Releases-->
+
+            <!--Latest Posts-->
+            <section class="section">
+                <div class="d-flex relative">
+                    <div class="mb-4">
+                        <h4>Latest Posts</h4>
+                        <p>Checkout What's new at our blog</p>
+                    </div>
+                </div>
+                <div class="lightSlider has-items-overlay"
+                     data-item="3"
+                     data-item-lg="2"
+                     data-item-md="1"
+                     data-item-sm="1"
+                     data-auto="false"
+                     data-pager="false"
+                     data-controls="true"
+                     data-loop="false">
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v5.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay"></div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v8.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay text-white">
+                                <div class="figcaption">
+
+                                </div>
+                            </div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Record Music & Events Template</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content.</p>
+                        </div>
+                        <div class="p-3 d-none d-lg-block">
+                            <figure class="avatar avatar-md float-left mr-3 mt-1">
+                                <img src="assets/img/demo/u1.jpg" alt="">
+                            </figure>
+                            <div>
+                                <h6>Alexander Pierce</h6>
+                                alexander@paper.com
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v9.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay text-white">
+                                <div class="figcaption">
+
+                                </div>
+                            </div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v10.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay text-white">
+                                <div class="figcaption">
+
+                                </div>
+                            </div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                </div>
+            </section>
+            <!--@New Releases-->
+
+            <!--PlayList & Events-->
+            <section class="section mt-4">
+                <div class="row row-eq-height">
+                    <div class="col-lg-8">
+                        <div class="card no-b mb-md-3 p-2">
+                            <div class="card-header no-bg transparent">
+                                <div class="d-flex justify-content-between">
+                                    <div class="align-self-center">
+                                        <div class="d-flex">
+                                            <!--<i class="icon-music s-36 mr-3  mt-2"></i>-->
+                                            <div>
+                                                <h4>Most Popular This Week</h4>
+                                                <p>Checkout What's new at our blog</p>
+                                                <div class="mt-3">
+                                                    <ul class="nav nav-tabs card-header-tabs nav-material responsive-tab mb-1"
+                                                        role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active show" id="w2--tab1"
+                                                               data-toggle="tab" href="#w2-tab1"
+                                                               role="tab"
+                                                               aria-selected="true">Rock</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="w3--tab1" data-toggle="tab"
+                                                               href="#w2-tab1"
+                                                               role="tab"
+                                                               aria-selected="false">Jazz</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="w4--tab3" data-toggle="tab"
+                                                               href="#w2-tab3" role="tab"
+
+                                                               aria-selected="false">Classic</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="w5--tab1" data-toggle="tab"
+                                                               href="#w2-tab1" role="tab"
+
+                                                               aria-selected="false">Jazz</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="w6--tab3" data-toggle="tab"
+                                                               href="#w2-tab3" role="tab"
+
+                                                               aria-selected="false">Classic</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-body no-p">
+                                <div class="tab-content" id="v-pills-tabContent1">
+                                    <div class="tab-pane fade show active" id="w2-tab1" role="tabpanel"
+                                         aria-labelledby="w2-tab1">
+                                       <div class="playlist pl-lg-3 pr-lg-3">
+                                           <div class="m-1 my-4">
+                                               <div class="d-flex align-items-center">
+                                                   <div class="col-1">
+                                                       <a class="no-ajaxy media-url" href="assets/media/track1.mp3" data-wave="assets/media/track1.json">
+                                                           <i class="icon-play s-28"></i>
+                                                       </a>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <figure class="avatar-md float-left  mr-3 mt-1">
+                                                           <img class="r-3" src="assets/img/demo/a1.jpg" alt="">
+                                                       </figure>
+                                                       <h6>Dance with me tonight</h6>Joe Doe
+                                                   </div>
+                                                   <div class="col-md-5 d-none d-lg-block">
+                                                       <div class="d-flex">
+                                                           <span class="ml-auto"> 5:03</span>
+                                                           <a href="#" class="ml-auto"><i class="icon-share-1"></i></a>
+                                                           <div class="ml-auto">
+                                                               <a href="#" class="btn btn-outline-primary btn-sm">Buy at iTunes</a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-1 ml-auto d-lg-none">
+                                                       <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                           <i class="icon-more-1"></i></a>
+                                                       <div class="dropdown-menu dropdown-menu-right">
+                                                               <a  class="dropdown-item" href="#"><i class="icon-share-1 mr-3"></i> Share</a>
+                                                               <a  class="dropdown-item" href="#"><i class="icon-shopping-bag mr-3"></i>Buy at iTunes</a>
+                                                           </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="m-1 my-4">
+                                               <div class="d-flex align-items-center">
+                                                   <div class="col-1">
+                                                       <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                           <i class="icon-play s-28"></i>
+                                                       </a>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <figure class="avatar-md float-left  mr-3 mt-1">
+                                                           <img class="r-3" src="assets/img/demo/a2.jpg" alt="">
+                                                       </figure>
+                                                       <h6>Dance with me tonight</h6>Joe Doe
+                                                   </div>
+                                                   <div class="col-md-5 d-none d-lg-block">
+                                                       <div class="d-flex">
+                                                           <span class="ml-auto"> 5:03</span>
+                                                           <a href="#" class="ml-auto"><i class="icon-share-1"></i></a>
+                                                           <div class="ml-auto">
+                                                               <a href="#" class="btn btn-outline-primary btn-sm">Buy at iTunes</a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-1 ml-auto d-lg-none">
+                                                       <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                           <i class="icon-more-1"></i></a>
+                                                       <div class="dropdown-menu dropdown-menu-right">
+                                                           <a  class="dropdown-item" href="#"><i class="icon-share-1 mr-3"></i> Share</a>
+                                                           <a  class="dropdown-item" href="#"><i class="icon-shopping-bag mr-3"></i>Buy at iTunes</a>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="m-1 my-4">
+                                               <div class="d-flex align-items-center">
+                                                   <div class="col-1">
+                                                       <a class="no-ajaxy media-url" href="assets/media/track3.mp3" data-wave="assets/media/track3.json">
+                                                           <i class="icon-play s-28"></i>
+                                                       </a>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <figure class="avatar-md float-left  mr-3 mt-1">
+                                                           <img class="r-3" src="assets/img/demo/a3.jpg" alt="">
+                                                       </figure>
+                                                       <h6>Dance with me tonight</h6>Joe Doe
+                                                   </div>
+                                                   <div class="col-md-5 d-none d-lg-block">
+                                                       <div class="d-flex">
+                                                           <span class="ml-auto"> 5:03</span>
+                                                           <a href="#" class="ml-auto"><i class="icon-share-1"></i></a>
+                                                           <div class="ml-auto">
+                                                               <a href="#" class="btn btn-outline-primary btn-sm">Buy at iTunes</a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-1 ml-auto d-lg-none">
+                                                       <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                           <i class="icon-more-1"></i></a>
+                                                       <div class="dropdown-menu dropdown-menu-right">
+                                                           <a  class="dropdown-item" href="#"><i class="icon-share-1 mr-3"></i> Share</a>
+                                                           <a  class="dropdown-item" href="#"><i class="icon-shopping-bag mr-3"></i>Buy at iTunes</a>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="m-1 my-4">
+                                               <div class="d-flex align-items-center">
+                                                   <div class="col-1">
+                                                       <a class="no-ajaxy media-url" href="assets/media/track1.mp3" data-wave="assets/media/track1.json">
+                                                           <i class="icon-play s-28"></i>
+                                                       </a>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <figure class="avatar-md float-left  mr-3 mt-1">
+                                                           <img class="r-3" src="assets/img/demo/a4.jpg" alt="">
+                                                       </figure>
+                                                       <h6>Dance with me tonight</h6>Joe Doe
+                                                   </div>
+                                                   <div class="col-md-5 d-none d-lg-block">
+                                                       <div class="d-flex">
+                                                           <span class="ml-auto"> 5:03</span>
+                                                           <a href="#" class="ml-auto"><i class="icon-share-1"></i></a>
+                                                           <div class="ml-auto">
+                                                               <a href="#" class="btn btn-outline-primary btn-sm">Buy at iTunes</a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-1 ml-auto d-lg-none">
+                                                       <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                           <i class="icon-more-1"></i></a>
+                                                       <div class="dropdown-menu dropdown-menu-right">
+                                                           <a  class="dropdown-item" href="#"><i class="icon-share-1 mr-3"></i> Share</a>
+                                                           <a  class="dropdown-item" href="#"><i class="icon-shopping-bag mr-3"></i>Buy at iTunes</a>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="m-1 my-4">
+                                               <div class="d-flex align-items-center">
+                                                   <div class="col-1">
+                                                       <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                           <i class="icon-play s-28"></i>
+                                                       </a>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <figure class="avatar-md float-left  mr-3 mt-1">
+                                                           <img class="r-3" src="assets/img/demo/a5.jpg" alt="">
+                                                       </figure>
+                                                       <h6>Dance with me tonight</h6>Joe Doe
+                                                   </div>
+                                                   <div class="col-md-5 d-none d-lg-block">
+                                                       <div class="d-flex">
+                                                           <span class="ml-auto"> 5:03</span>
+                                                           <a href="#" class="ml-auto"><i class="icon-share-1"></i></a>
+                                                           <div class="ml-auto">
+                                                               <a href="#" class="btn btn-outline-primary btn-sm">Buy at iTunes</a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-1 ml-auto d-lg-none">
+                                                       <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                           <i class="icon-more-1"></i></a>
+                                                       <div class="dropdown-menu dropdown-menu-right">
+                                                           <a  class="dropdown-item" href="#"><i class="icon-share-1 mr-3"></i> Share</a>
+                                                           <a  class="dropdown-item" href="#"><i class="icon-shopping-bag mr-3"></i>Buy at iTunes</a>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="m-1 my-4">
+                                               <div class="d-flex align-items-center">
+                                                   <div class="col-1">
+                                                       <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                           <i class="icon-play s-28"></i>
+                                                       </a>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <figure class="avatar-md float-left  mr-3 mt-1">
+                                                           <img class="r-3" src="assets/img/demo/a8.jpg" alt="">
+                                                       </figure>
+                                                       <h6>Dance with me tonight</h6>Joe Doe
+                                                   </div>
+                                                   <div class="col-md-5 d-none d-lg-block">
+                                                       <div class="d-flex">
+                                                           <span class="ml-auto"> 5:03</span>
+                                                           <a href="#" class="ml-auto"><i class="icon-share-1"></i></a>
+                                                           <div class="ml-auto">
+                                                               <a href="#" class="btn btn-outline-primary btn-sm">Buy at iTunes</a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-1 ml-auto d-lg-none">
+                                                       <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                           <i class="icon-more-1"></i></a>
+                                                       <div class="dropdown-menu dropdown-menu-right">
+                                                           <a  class="dropdown-item" href="#"><i class="icon-share-1 mr-3"></i> Share</a>
+                                                           <a  class="dropdown-item" href="#"><i class="icon-shopping-bag mr-3"></i>Buy at iTunes</a>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="w2-tab3" role="tabpanel"
+                                         aria-labelledby="w2-tab3">
+                                        <div class="card-body has-items-overlay playlist p-5">
+                                            <div class="row">
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a7.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a6.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a5.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a4.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a3.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a2.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a1.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <figure class="mb-2">
+                                                        <div class="img-wrapper r-10">
+                                                            <img class=" r-10" src="assets/img/demo/a8.jpg"
+                                                                 alt="/">
+                                                            <div class="img-overlay text-white p-5">
+                                                                <div class="center-center">
+                                                                    <a class="no-ajaxy media-url"
+                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                                        <i class="icon-play s-48"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class="figure-title">
+                                                        <h6>To Phir Ao</h6>
+                                                        <small>Atif Aslam</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3 card p-3">
+                            <div>
+                                <div class="mr-3 float-left text-center">
+                                    <div class="s-36">09</div>
+                                    <span>July</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <a href="events-single.html">
+                                            <h4 class="text-primary">New York park live</h4>
+                                        </a>
+                                    </div>
+                                    <small> 33 Cliveden Close, Melbourne VIC 3000, Australia</small>
+                                    <div class="mt-2">
+                                        <i class="icon-clock-o mr-1"> </i> 7:00 PM - 11:00 PM
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <small class="my-3">Artist Performing</small>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="avatar-group">
+                                    <figure class="avatar no-shadow">
+                                        <img src="assets/img/demo/u4.jpg" alt=""></figure>
+                                    <figure class="avatar no-shadow">
+                                        <img src="assets/img/demo/u5.jpg" alt=""></figure>
+                                    <figure class="avatar no-shadow">
+                                        <img src="assets/img/demo/u6.jpg" alt=""></figure>
+                                </div>
+                                <div>
+                                    <a href="events-single.html">Buy Tickets</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 card p-3">
+                            <div>
+                                <div class="mr-3 float-left text-center">
+                                    <div class="s-36">09</div>
+                                    <span>March</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <a href="events-single.html">
+                                            <h4 class="text-primary">Linkin park live</h4>
+                                        </a>
+                                    </div>
+                                    <small> 33 Cliveden Close, Melbourne VIC 3000, Australia</small>
+                                    <div class="mt-2">
+                                        <i class="icon-clock-o mr-1"> </i> 7:00 PM - 11:00 PM
+                                    </div>
+                                </div>
+                            </div>
+
+                            <small class="my-3">Artist Performing</small>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="avatar-group">
+                                    <figure class="avatar no-shadow">
+                                        <img src="assets/img/demo/u4.jpg" alt=""></figure>
+                                    <figure class="avatar no-shadow">
+                                        <img src="assets/img/demo/u5.jpg" alt=""></figure>
+                                    <figure class="avatar no-shadow">
+                                        <img src="assets/img/demo/u6.jpg" alt=""></figure>
+                                </div>
+                                <div>
+                                    <a href="events-single.html">Buy Tickets</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 card">
+                            <figure class="card-img figure">
+                                <div class="img-wrapper">
+                                    <img class="r-3" src="assets/img/demo/v11.jpg" alt="Card image">
+                                </div>
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                    </div>
+                                </div>
+                                <div class="has-bottom-gradient">
+                                    <div class="d-flex">
+                                        <div class="card-img-overlay">
+                                            <div>
+                                                <div class="mr-3 float-left text-center">
+                                                    <div class="s-36">24</div>
+                                                    <span>July</span>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <a href="events-single.html">
+                                                            <h4 class="text-primary">Linkin park live</h4>
+                                                        </a>
+                                                    </div>
+                                                    <small> 33 Cliveden Close, Melbourne VIC 3000, Australia</small>
+                                                    <div class="mt-2">
+                                                        <i class="icon-clock-o mr-1"> </i> 7:00 PM - 11:00 PM
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <div class="bottom-gradient"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--@PlayLIst & Events-->
+
+            <!--Recommend-->
+            <section class="section">
+                <div class="d-flex relative align-items-center justify-content-between">
+                    <div class="mb-4">
+                        <h4>Recommended For You</h4>
+                        <p>Enjoy some new awesome music</p>
+                    </div>
+                    <a href="albums.html">View Albums<i class="icon-angle-right ml-3"></i></a>
+                </div>
+                <div class="lightSlider has-items-overlay playlist"
+                     data-item="6"
+                     data-item-lg="3"
+                     data-item-md="3"
+                     data-item-sm="2"
+                     data-auto="false"
+                     data-pager="false"
+                     data-controls="true"
+                     data-loop="false">
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a1.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a2.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a3.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track1.mp3" data-wave="assets/media/track1.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a4.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track3.mp3" data-wave="assets/media/track3.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a5.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a6.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/a7.jpg" alt="/">
+                                <div class="img-overlay text-white">
+                                    <div class="figcaption">
+                                        <ul class="list-inline d-flex align-items-center justify-content-between">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="snackbar" data-text="Added to favourites"
+                                                   data-pos="top-right"
+                                                   data-showAction="true"
+                                                   data-actionText="ok"
+                                                   data-actionTextColor="#fff"
+                                                   data-backgroundColor="#0c101b">
+                                                    <i class="icon-heart-o s-18"></i>
+                                                </a></li>
+                                            <li class="list-inline-item ">
+                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <i class="icon-play s-48"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="album-single.html"><i
+                                                        class="icon-more s-18 pt-3"></i></a></li>
+                                        </ul>
+                                        <div class="text-center mt-5">
+                                            <h5>To Phir Ao</h5>
+                                            <span>Joe Doe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="figure-title text-center p-2">
+                                    <h5>To Phir Ao</h5>
+                                    <span>Joe Doe</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                </div>
+            </section>
+            <!--@Recommend-->
+
+        </div>
+    </div>
+</div>
+</main><!--@Page Content-->
+</div><!--@#rekord-app-->
+<!--/#rekord-app -->
+<script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyC3YkZNNySdyR87o83QEHWglHfHD_PZqiw&libraries=places"></script>
+<script src="assets/js/app.js"></script>
+
+
+</body>
 </html>
